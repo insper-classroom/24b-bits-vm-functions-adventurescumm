@@ -1,0 +1,26 @@
+function pow 2
+
+push argument 1
+pop local 0
+push constant 0
+pop local 1
+
+label pow
+push local 0
+push constant 0
+eq
+if-goto end
+push local 0
+push constant 1
+sub
+pop local 0
+push argument 0
+call mult 2
+push local 1
+add
+pop local 1
+goto pow
+
+label end
+push local 1
+return

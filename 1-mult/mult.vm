@@ -1,2 +1,40 @@
 // implemente a funcao mult que recebe dois argumentos
 // e retorna a multiplicacao
+function mult 2
+push argument 1
+push constant 0
+eq
+if-goto zero
+push constant 0
+push argument 0
+eq
+if-goto zero
+push constant 0
+pop local 0
+push argument 1
+pop local 1
+
+label mult
+push argument 0
+push local 0
+add
+pop local 0
+
+label while
+push constant 1
+push local 1
+eq
+if-goto end
+push local 1
+push constant 1
+sub
+pop local 1
+goto mult
+
+label zero
+push constant 0
+pop local 0
+
+label end
+push local 0
+return
